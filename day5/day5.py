@@ -35,8 +35,10 @@ def main_2():
                 break
             checker.append([int(n) for n in line.split('-')])
 
-    for i in range(len(checker)):
-        bounds = [[checker[i][0], checker[i][1]]]
+    checker.sort(key=lambda c: c[0])
+
+    for i, c in enumerate(checker):
+        bounds = [[c[0], c[1]]]
         for j in range(i):
             c_lower = checker[j][0]
             c_upper = checker[j][1]
